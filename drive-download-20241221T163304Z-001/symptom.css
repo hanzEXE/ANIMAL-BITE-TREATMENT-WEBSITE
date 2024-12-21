@@ -1,0 +1,227 @@
+/* Page body styling*/
+body{
+    background-color: #868b8e;
+    margin: 0;
+}
+
+main {
+    margin: 20px;
+    margin-top: 10px;
+}
+/*Navbar section*/
+.navbar {
+    position: relative;
+    background-color: #b9b7bd;
+    box-shadow: 0 2px 3px black;
+    z-index: 100;
+}
+
+/*For spacing and alignment*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;       
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    flex-grow: 1;                  
+    text-align: center;
+}
+
+/*For active nav-links*/
+.nav-links.active {
+    background: linear-gradient(135deg, #b9b7bd, #e7d2cc); 
+    opacity: 1; 
+}
+
+/*List items of navigation*/
+nav li {
+    padding: 25px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/*Hover effect for nav*/
+nav li:hover {
+    background-color: #e7d2cc;
+} 
+
+/*S.A.N.D Logo*/
+.Logo {
+    position: relative;
+    max-height: 50px;
+    margin-left: 20px; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: 0 2px 3px black;
+}
+
+/*This menu is used for mobile devices*/
+.hamburger {
+    display: none; /*Won't be displayed on larger screens*/
+    cursor: pointer;
+}
+
+.hamburger span {
+    font-size: 30px;
+    color: white;
+}
+
+/* Mobile responsiveness for the navbar */
+@media (max-width: 768px) {
+
+    .navbar{
+        height: 80px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-links.active {
+        display: flex; /*Links are visible when active*/
+
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+} 
+
+/* Symtoms section styling*/
+.symptoms-section {
+    text-align: center;
+    padding: 20px;
+}
+
+/*Symptoms header */
+.symptoms-section h2 {
+    display: inline-block;
+    text-align: center;
+    background-color: #e7d2cc;  
+    padding: 5px 5px; 
+    border-radius: 20px; 
+    font-weight: bold;
+    max-width: 100%; 
+    min-width: 30%;
+    font-size: 1.5rem; 
+    line-height: 1.4; 
+}
+
+/*LAYOUT FOR THE GRID */
+.symptoms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* FOR TWO COLUMNS */
+    gap: 20px; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/*Individual boxes with hover effecys */
+.symptom-box {
+    display: flex;
+    align-items: center;
+    background-color: #d1cfd1; 
+    border: 2px solid #b9b7bd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/*Symptom image Styling */
+.symptom-box:hover {
+    transform: translateY(-8px); 
+    background-color: #e7d2cc;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.symptom-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 10px; 
+    background-color: white; 
+    padding: 5px;
+}
+
+/*Text styling and adjustments in symptom boxes */
+.symptom-box p {
+    margin: 0;
+    font-size: 1.1em;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+/*Highlights text */
+.symptom-box:hover p {
+    color: black; 
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .symptoms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .symptom-image {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.footer {
+    background-color: #b9b7bd;
+    box-shadow: 0 2px 3px black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* FOOTER */
+.footer-content {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: black; 
+}
+
+
+
+

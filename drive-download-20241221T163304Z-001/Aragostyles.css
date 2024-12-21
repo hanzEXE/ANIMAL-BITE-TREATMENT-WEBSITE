@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    background-color: #b9b7bd;;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2em;
+    color: black
+}
+
+p, li {
+    font-size: 1em;
+    color: #333;
+}
+
+/* Personal Information */
+.personal-info {
+    display: flex;               /* Aligns the items in a row (side by side) */
+    align-items: center;         /* Vertically aligns the content */
+    justify-content: center;     /* Horizontally centers the content */
+    width: 80%;                  /* Adjust width to limit the size of the container */
+    margin: 20px auto;           /* Centers the container horizontally with some margin */
+    padding: 20px;
+}
+
+.profile-img {
+    margin-right: 0;        
+    margin-bottom: 15px;   
+    width: 120px;            
+    height: 120px;               
+    border-radius: 50%;          
+    
+}
+
+.personal-details {
+    text-align: left;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-spacing: 10px;
+    padding: 10px;
+    border: 5px solid #868b8e;
+    background-color: #E7D2CC; /* Set the background color of the element */
+}
+
+th {
+    background-color: #b9b7bd;
+    font-weight: bold;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+/* Career Objectives Section */
+.career-objectives blockquote {
+    font-style: italic;
+    margin: 20px;
+    padding: 15px;
+    background-color: #E7D2CC;
+    border-left: 5px solid #868b8e;
+}
+
+/* Background Section */
+.personal-background, .educational-attainment {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    border-radius: 20px;
+}
+
+/* Experience and Skills Section */
+.experience-and-skills {
+    display: flex;
+    justify-content: space-between;
+    background-color: #b9b7bd;
+    border-radius: 10px;
+}
+
+.experience-box, .skills-box {
+    width: 48%;
+    border-radius: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li i {
+    font-style: italic;
+}
+
+/* Home Logo */
+.home-logo {
+    margin: 15px;
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* For small screens (mobiles) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em; /* Smaller font size for header */
+    }
+
+    .personal-info {
+        flex-direction: column; /* Stack the image and text vertically */
+        width: 90%; /* Allow the container to take more space */
+    }
+
+    .profile-img {
+        margin-right: 0;
+        margin-bottom: 15px; /* Add space below the image when stacked */
+        width: 120px; /* Smaller image on mobile */
+        height: 120px;
+    }
+
+    .personal-background, .educational-attainment {
+        width: 90%; /* Take more space on smaller screens */
+    }
+
+    .experience-and-skills {
+        flex-direction: column; /* Stack experience and skills vertically */
+    }
+
+    .experience-box, .skills-box {
+        width: 100%; /* Make the boxes take full width */
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em; /* Adjust the header size for tablet view */
+    }
+
+    .personal-info {
+        width: 85%; /* Adjust container width for tablet */
+    }
+
+    .personal-background, .educational-attainment {
+        width: 70%; /* Adjust section width for tablet */
+    }
+
+    .experience-and-skills {
+        flex-direction: column; /* Stack the sections on medium screens */
+    }
+
+    .experience-box, .skills-box {
+        width: 100%;
+    }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 1024px) {
+    .personal-info {
+        width: 70%; /* Adjust container width for larger screens */
+    }
+
+    .personal-background, .educational-attainment {
+        width: 50%; /* Maintain width for larger screens */
+    }
+
+    .experience-and-skills {
+        flex-direction: row; /* Display side-by-side on large screens */
+    }
+
+    .experience-box, .skills-box {
+        width: 48%; /* Maintain two boxes side by side */
+    }
+}

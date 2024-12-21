@@ -1,0 +1,360 @@
+body {
+    background-color: #868b8e;
+    margin: 0;
+    position: relative; 
+}
+
+main {
+    margin: 20px;
+    flex: 1; 
+    position: relative; 
+}
+
+/* Navbar Styles */
+.navbar {
+    position: relative;
+    background-color: #b9b7bd;
+    box-shadow: 0 2px 3px black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative; 
+    z-index: 10; /* Ensures navbar is above other elements */
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.nav-links.active {
+    background: linear-gradient(135deg, #b9b7bd, #e7d2cc); 
+    opacity: 1; /* Ensures visibility when active */
+}
+
+nav li {
+    padding: 30px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav li:hover {
+    background-color: #e7d2cc;/* Hover effect to navbar */
+}
+
+/* Logo */
+.Logo {
+    position: relative;
+    max-height: 50px;
+    margin-left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: 0 2px 3px black;
+}
+
+.hamburger {
+    display: none; /* Hidden by default for larger screens */
+    cursor: pointer;
+}
+
+.hamburger span {
+    font-size: 30px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 80px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.video-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.video-title, .section-title {
+    font-family: 'Georgia', serif; 
+    font-size: 2.5rem; 
+    text-align: center; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 20px auto; 
+    letter-spacing: 2px; 
+}
+
+.video-title {
+    font-size: 3rem; 
+    font-weight: bold; 
+    color: white;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;/* Ensures video appears above other elements */
+}
+
+.video {
+    width: 100%; 
+    height: 500px; 
+    max-height: 100vh;
+    object-fit: cover; 
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .overview {
+        width: 90%;
+        margin: 0 auto; 
+        position: static; 
+    }
+}
+
+.overview {
+    position: absolute;
+    left: 5%; 
+    top: 50%;
+    width: 30%;
+    color: white; 
+    padding: 5px;
+    border-radius: 10px;
+    text-align: left;
+    z-index: 10;
+    opacity: 0; 
+    transform: translateY(-50%); 
+    transition: opacity 0.3s ease-out; /* Smooth fade-in effect */
+}
+
+.video-container:hover .overview {
+    opacity: 1; 
+}
+
+.overview h2 {
+    text-align: center; 
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.overview p {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.5;
+    text-align: justify; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    video {
+        width: 90%;
+    }
+
+    .overview {
+        position: absolute;
+        width: 80%;
+        left: 50%;
+        top: 50%;
+        margin-top: 20px; 
+        margin-bottom: 20px; 
+        transform: translate(-50%, -50%); 
+    }
+}
+
+@media (max-width: 430px) {
+    .video-title {
+        font-size: 1.5rem;
+    }
+    .overview {
+        width: 90%;
+        left: 50%; 
+        transform: translateX(-50%) translateY(-50%); 
+    }
+}
+
+/* First Aid Section Styles */
+.first-aid-steps {
+    padding: 30px 20px; 
+    border-radius: 10px; 
+    margin: 20px auto;
+    width: 95%; 
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #3f3c3c;
+    margin-bottom: 30px;
+}
+
+.step-card{
+    border: 5px solid #e7d2cc;
+    background-color: #b9b7bd;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    display: table-column-group;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 1;
+    transform: translateY(0); 
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.step-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.step-card img {
+    width: 100%; 
+    height: 200px; 
+    border-radius: 8px;
+    object-fit: cover; 
+}
+
+.step-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+
+.step-text {
+    color: rgb(34, 33, 33);
+    font-size: 1rem;
+    padding: 10px;
+    text-align: left;
+    text-align: justify;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.step-card .step-text p {
+    margin: 0;
+}
+
+.step-card:hover .step-text {
+    color: #333;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .step-card {
+        transform: translateY(0); 
+    }
+}
+
+@media (max-width: 430px) {
+    .step-number {
+        font-size: 1.5rem;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Button */
+.button-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+
+}
+
+#toggleButton {
+    position: relative;  
+    bottom: 20px;        
+    right: 20px;         
+    background-color: #c4bcbc;  
+    color: black;
+    padding: 8px 15px;
+    font-size: 1.5rem;   
+    font-weight: bold;   
+    border-radius: 50px;  
+    cursor: pointer;
+    transition: all 0.3s ease;  
+    text-align: center;  
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);  
+    z-index: 10;  
+}
+
+
+#toggleButton:hover {
+    background: linear-gradient(to right, #e7d2cc, #868b8e);
+    transform: translateY(-5px); /* Adds hover animation */
+}
+
+.footer {
+    background-color: #b9b7bd; 
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.footer-content {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: black; 
+}

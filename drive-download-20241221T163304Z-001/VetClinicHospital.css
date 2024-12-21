@@ -1,0 +1,418 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: whitesmoke;
+    color: black; /* Changed to black for better readability */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #868b8e;
+    position: relative;
+    box-shadow: 0 2px 3px black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav li {
+    padding: 25px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav li:hover {
+    background-color: #e7d2cc;
+}
+
+nav button.Findbttn:hover {
+    background-color: #e7d2cc;
+}
+
+.Logo {
+    position: relative;
+    max-height: 50px;
+    margin-left: 30px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    font-size: 30px;
+    color: white;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+    nav ul {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+    .imgandloc, .rcmndhpcl {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .bgont {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgandloc, .rcmndhpcl {
+        width: 90%; /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav li {
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .slideshow-container {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .mySlides img {
+        width: 100%;
+        height: auto;
+    }
+
+    .imgandloc, .rcmndhpcl {
+        width: 100%;
+        height: auto;
+    }
+
+    .slide-content {
+        width: 90%;
+        padding: 5px;
+    }
+
+    .buttons .btn {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Body Background */
+
+/* Image and Location Section */
+.bgont {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures vertical centering */
+    height: 400px; /* Set a consistent height for your container */
+    overflow: hidden; /* Ensures no overflow from images */
+}
+
+.mySlides img {
+    height: auto;
+    border-radius: 20px;
+    margin: auto;
+    display: block;
+    object-fit: cover; /* Ensures the image fits within the container without distortion */
+}
+
+/* Slideshow Navigation Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Dots Navigation */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Slideshow Animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: .4; }
+    to { opacity: 1; }
+}
+
+@media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+        font-size: 11px;
+    }
+}
+
+/* Main Content Styling */
+.imgandloc {
+    background-color: #868b8e;
+    height: 80vh;
+    width: 700px;
+    margin: 10px;
+    border-radius: 20px;
+    position: relative;
+    padding: 0;
+}
+
+.mySlides {
+    position: relative;
+}
+
+/* Slide Content */
+.slide-content {
+    position: absolute; /* Change to absolute */
+    bottom: 0;         /* Move to the bottom */
+    left: 0;           /* Align to the left */
+    right: 0;          /* Align to the right */
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px; 
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.buttons .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons .btn-info {
+    background-color: #007BFF; /* Blue button */
+    color: white;
+}
+
+.buttons .btn-info:hover {
+    background-color: #0056b3;
+}
+
+.buttons .btn-directions {
+    background-color: #28A745; /* Green button */
+    color: white;
+}
+
+.buttons .btn-directions:hover {
+    background-color: #1e7e34;
+}
+
+/* Recommendations Section */
+.rcmndhpcl {
+    background-color: #868b8e;
+    height: 90vh;
+    width: 500px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 300px;
+    max-width: 100%;
+}
+
+.Findbttn {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid;
+    box-shadow: 0 1px 2px black;
+    cursor: pointer;
+}
+
+.Search-Bar {
+    padding: 10px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+form {
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+}
+
+/* Recommendations Content */
+.recmd {
+    text-align: center;
+    color: black;
+}
+
+.hp1, .hp2, .hp3, .hp4, .hp5 {
+    padding: 20px;
+    margin: 5px;
+    background-color: #b9b7bd;
+    border-radius: 10px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.vetc1, .vetc2, .vetc3, .vetc4, .vetc5 {
+    padding: 20px;
+    margin: 5px;
+    background-color: #b9b7bd;
+    border-radius: 10px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.hp1:hover, .hp2:hover, .hp3:hover, .hp4:hover, .hp5:hover, .hp6:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #e7d2cc, #868b8e);
+}
+
+.vetc1:hover, .vetc2:hover, .vetc3:hover, .vetc4:hover, .vetc5:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #e7d2cc, #868b8e);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #868b8e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
